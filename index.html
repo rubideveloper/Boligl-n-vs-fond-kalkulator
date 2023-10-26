@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Lånekalkulator</title>
+  </head>
+  <body>
+    <h1>Lånekalkulator</h1>
+    <div class="container">
+      <div class="calculator">
+        <div class="input-group">
+          <label for="kjopesum">Kjøpesum:</label>
+          <input type="number" id="kjopesum" step="25000" placeholder="0" />
+        </div>
+        <div class="input-group">
+          <label for="egenkapital">Egenkapital:</label>
+          <input type="number" id="egenkapital" step="15000" placeholder="0" />
+        </div>
+        <div class="input-group">
+          <label for="laneBelop">Ønsket lånebeløp:</label>
+          <input type="number" id="laneBelop" step="25000" placeholder="0" />
+        </div>
+        <div class="input-group">
+          <label for="nominellRente">Nominell rente (%):</label>
+          <input type="number" id="nominellRente" step="0.05" placeholder="0" />
+        </div>
+        <div class="input-group">
+          <label for="effektivRente">Effektiv rente (%):</label>
+          <input type="number" id="effektivRente" step="0.05" placeholder="0" />
+        </div>
+        <div class="input-group">
+          <label for="ekstraInnbetaling">Ekstra innbetaling:</label>
+          <input
+            type="number"
+            id="ekstraInnbetaling"
+            step="1000"
+            placeholder="0"
+          />
+        </div>
+        <div class="input-group">
+          <label for="nedbetalingsTid">Nedbetalingstid:</label>
+          <input
+            type="range"
+            id="nedbetalingsTid"
+            min="0"
+            max="30"
+            step="1"
+            value="0"
+            oninput="updateSliderNedbetalingsTid(this.value)"
+          />
+          <br />
+          <span id="sliderValueNedbetalingsTid">0</span>
+        </div>
+
+        <div class="input-group">
+          <label for="betalteAr">Antall år betalt:</label>
+          <input
+            type="range"
+            id="betalteAr"
+            min="0"
+            max="30"
+            step="1"
+            value="0"
+            oninput="updateSliderValueBetalteAr(this.value)"
+          />
+          <br />
+          <span id="sliderValueBetalteAr">0</span>
+        </div>
+
+        <div class="input-group">
+          <label for="betalteManeder">Antall måneder betalt:</label>
+          <input
+            type="range"
+            id="betalteManeder"
+            min="0"
+            max="11"
+            step="1"
+            value="0"
+            oninput="updateSliderValueBetalteManeder(this.value)"
+          />
+          <br />
+          <span id="sliderValueBetalteManeder">0</span>
+        </div>
+
+        <button id="beregn">Beregn</button>
+      </div>
+
+      <div class="resultater">
+        <div class="egenkapital-container">
+          <h3>OPPTJENT EGENKAPITAL:</h3>
+
+          <div class="egenkapital-container">
+            <p>Egenkapitalandel: <span id="egenkapitalAndel">0%</span></p>
+          </div>
+
+          <div class="manedlig-container">
+            <h4>MÅNEDLIG:</h4>
+            <p>
+              Månedlig beløp (inkl. renter og avdrag):
+              <span id="manedligBelop">0</span> NOK
+              <span class="etter-fradrag" id="manedligBelopEtterFradrag"></span>
+            </p>
+            <br /><br />
+            <p>
+              Månedlig avdrag: <span id="manedligAvdragBetaling">0</span> NOK
+            </p>
+            <p>Månedlig rente: <span id="manedligRenteBetaling">0</span> NOK</p>
+          </div>
+
+          <div class="total-container">
+            <h4>TOTAL:</h4>
+            <p>
+              Total lånekostnad: <span id="totalPris">0</span> NOK <br />
+              <span class="etter-fradrag" id="totalPrisEtterFradrag"></span>
+              <br />
+            </p>
+            <br />
+            <p>Total rentekostnad: <span id="totalRenteKostnad">0</span> NOK</p>
+          </div>
+
+          <div class="tid-container">
+            <h4>TID:</h4>
+            <p>
+              Gjenverende lånebeløp:
+              <span id="gjenverendeLanebelop">0</span> NOK
+            </p>
+            <p>Antall terminer igjen: <span id="terminerIgjen">0</span></p>
+            <p>Tid igjen på lånet: <span id="tidIgjen">0 år 0 måneder</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

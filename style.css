@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+/* CALCULATOR */
+.calculator {
+  width: 300px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* RESULTS */
+.resultater {
+  width: 425px;
+  height: 500p;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.egenkapital-container {
+}
+
+.etter-fradrag {
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+hr {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+p {
+  height: 1px; /* Legg til en fast høyde */
+  width: 100%; /* Legg til en fast bredde */
+}
+
+span {
+  font-weight: bold;
+}
+
+.etter-fradrag {
+  color: green;
+}
+
+.tid-container {
+  margin-top: 50px;
+}
